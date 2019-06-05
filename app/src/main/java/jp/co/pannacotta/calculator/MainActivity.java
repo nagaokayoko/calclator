@@ -185,21 +185,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        plusButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //+ってボタン押したら今まで押されたボタンの表示が残ったまま+って文字が追加で入るようにする。
-                //表示される材料を用意する。
-                //テキストビューから表示されている文字を取り出して箱に入れる。（今まで入っている文字が取り出せる）
-                String displayString = inputTextView.getText().toString();//空中にきてるだけになっちゃうから取ってきたものの型が何なのか書く。
-                //文字列を連結する
-                StringBuilder stringBuilder = new StringBuilder();
-                //文字列を追加する
-                stringBuilder.append(displayString).append("+");
-                inputTextView.setText(stringBuilder);
-            }
-        });
-
         minusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -246,6 +231,27 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        //プラスボタンが押された時の処理
+        plusButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //+ってボタン押したら今まで押されたボタンの表示が残ったまま+って文字が追加で入るようにする。
+                //テキストビューから表示されている文字を取り出して箱に入れる。（今まで入っている文字が取り出せる）
+                String displayString = inputTextView.getText().toString();//空中にきてるだけになっちゃうから取ってきたものの型が何なのか書く。
+                //文字列を連結する
+                StringBuilder stringBuilder = new StringBuilder();
+                //文字列を追加する
+                stringBuilder.append(displayString).append("+");
+                inputTextView.setText(stringBuilder);
+
+                //「足すんだよ！」って意識させる。プラスボタンのセット？記憶？
+
+                // 入力されている文字列を数値で取得しておく
+            }
+        });
+
+
+
         //クリアボタンを押された時の処理
         clrButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -260,9 +266,10 @@ public class MainActivity extends AppCompatActivity {
         equalButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int result = Integer.parseInt(inputTextView.getText().toString()); // 入力された計算文字列をint型に変換
-                int total = result;
-                answerTextView.setText(String.valueOf(total)); // 答えを表示
+                String displayString = inputTextView.getText().toString();// 入力された計算文字列を取得
+                int result = Integer.parseInt(displayString); // 入力された計算文字列をint型に変換
+                String total = String.valueOf(result);
+                answerTextView.setText(total); // 答えを表示
             }
         });
 
