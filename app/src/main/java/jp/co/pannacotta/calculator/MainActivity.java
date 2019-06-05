@@ -9,16 +9,15 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView textView;
-    private Button keyButton;
-    private Button twoButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final TextView textView = findViewById(R.id.anserTextView);
+        final int total; // 計算結果
+
+        final TextView inputTextView = findViewById(R.id.inputTextView);
+        final TextView answerTextView = findViewById(R.id.anserTextView);
 
         Button oneButton = findViewById(R.id.button9);
         Button twoButton = findViewById(R.id.button10);
@@ -29,19 +28,25 @@ public class MainActivity extends AppCompatActivity {
         Button sevenButton = findViewById(R.id.button1);
         Button eightButton = findViewById(R.id.button2);
         Button nineButton = findViewById(R.id.button3);
-        Button zeroButton = findViewById(R.id.button15);
+        Button plusButton = findViewById(R.id.button4);
+        Button minusButton = findViewById(R.id.button8);
+        Button multiplicationButton = findViewById(R.id.button12);
+        Button divisionButton = findViewById(R.id.button16);
+        Button equalButton = findViewById(R.id.button17);
+        final Button zeroButton = findViewById(R.id.button15);
+        Button clrButton = findViewById(R.id.button13);
 
         oneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //1ってボタン押したら今まで押されたボタンの表示が残ったまま1って文字が入るようにする。
                 //テキストビューから表示されている文字を取り出して箱に入れる。（今まで入っている文字が取り出せる）
-                String displayString = textView.getText().toString();//空中にきてるだけになっちゃうから取ってきたものの型が何なのか書く。
+                String displayString = inputTextView.getText().toString();//空中にきてるだけになっちゃうから取ってきたものの型が何なのか書く。
                 //文字列を連結する
                 StringBuilder stringBuilder = new StringBuilder();
                 //文字列を追加する
                 stringBuilder.append(displayString).append("1");
-                textView.setText(stringBuilder);
+                inputTextView.setText(stringBuilder);
             }
         });
 
@@ -51,12 +56,12 @@ public class MainActivity extends AppCompatActivity {
                 //2ってボタン押したら今まで押されたボタンの表示が残ったまま2って文字が追加で入るようにする。
                 //表示される材料を用意する。
                 //テキストビューから表示されている文字を取り出して箱に入れる。（今まで入っている文字が取り出せる）
-                String displayString = textView.getText().toString();//空中にきてるだけになっちゃうから取ってきたものの型が何なのか書く。
+                String displayString = inputTextView.getText().toString();//空中にきてるだけになっちゃうから取ってきたものの型が何なのか書く。
                 //文字列を連結する
                 StringBuilder stringBuilder = new StringBuilder();
                 //文字列を追加する
                 stringBuilder.append(displayString).append("2");
-                textView.setText(stringBuilder);
+                inputTextView.setText(stringBuilder);
             }
         });
 
@@ -66,12 +71,12 @@ public class MainActivity extends AppCompatActivity {
                 //3ってボタン押したら今まで押されたボタンの表示が残ったまま3って文字が追加で入るようにする。
                 //表示される材料を用意する。
                 //テキストビューから表示されている文字を取り出して箱に入れる。（今まで入っている文字が取り出せる）
-                String displayString = textView.getText().toString();//空中にきてるだけになっちゃうから取ってきたものの型が何なのか書く。
+                String displayString = inputTextView.getText().toString();//空中にきてるだけになっちゃうから取ってきたものの型が何なのか書く。
                 //文字列を連結する
                 StringBuilder stringBuilder = new StringBuilder();
                 //文字列を追加する
                 stringBuilder.append(displayString).append("3");
-                textView.setText(stringBuilder);
+                inputTextView.setText(stringBuilder);
             }
         });
 
@@ -81,12 +86,12 @@ public class MainActivity extends AppCompatActivity {
                 //4ってボタン押したら今まで押されたボタンの表示が残ったまま4って文字が追加で入るようにする。
                 //表示される材料を用意する。
                 //テキストビューから表示されている文字を取り出して箱に入れる。（今まで入っている文字が取り出せる）
-                String displayString = textView.getText().toString();//空中にきてるだけになっちゃうから取ってきたものの型が何なのか書く。
+                String displayString = inputTextView.getText().toString();//空中にきてるだけになっちゃうから取ってきたものの型が何なのか書く。
                 //文字列を連結する
                 StringBuilder stringBuilder = new StringBuilder();
                 //文字列を追加する
                 stringBuilder.append(displayString).append("4");
-                textView.setText(stringBuilder);
+                inputTextView.setText(stringBuilder);
             }
         });
 
@@ -96,12 +101,12 @@ public class MainActivity extends AppCompatActivity {
                 //5ってボタン押したら今まで押されたボタンの表示が残ったまま5って文字が追加で入るようにする。
                 //表示される材料を用意する。
                 //テキストビューから表示されている文字を取り出して箱に入れる。（今まで入っている文字が取り出せる）
-                String displayString = textView.getText().toString();//空中にきてるだけになっちゃうから取ってきたものの型が何なのか書く。
+                String displayString = inputTextView.getText().toString();//空中にきてるだけになっちゃうから取ってきたものの型が何なのか書く。
                 //文字列を連結する
                 StringBuilder stringBuilder = new StringBuilder();
                 //文字列を追加する
                 stringBuilder.append(displayString).append("5");
-                textView.setText(stringBuilder);
+                inputTextView.setText(stringBuilder);
             }
         });
 
@@ -111,12 +116,12 @@ public class MainActivity extends AppCompatActivity {
                 //6ってボタン押したら今まで押されたボタンの表示が残ったまま6って文字が追加で入るようにする。
                 //表示される材料を用意する。
                 //テキストビューから表示されている文字を取り出して箱に入れる。（今まで入っている文字が取り出せる）
-                String displayString = textView.getText().toString();//空中にきてるだけになっちゃうから取ってきたものの型が何なのか書く。
+                String displayString = inputTextView.getText().toString();//空中にきてるだけになっちゃうから取ってきたものの型が何なのか書く。
                 //文字列を連結する
                 StringBuilder stringBuilder = new StringBuilder();
                 //文字列を追加する
                 stringBuilder.append(displayString).append("6");
-                textView.setText(stringBuilder);
+                inputTextView.setText(stringBuilder);
             }
         });
 
@@ -126,12 +131,12 @@ public class MainActivity extends AppCompatActivity {
                 //7ってボタン押したら今まで押されたボタンの表示が残ったまま7って文字が追加で入るようにする。
                 //表示される材料を用意する。
                 //テキストビューから表示されている文字を取り出して箱に入れる。（今まで入っている文字が取り出せる）
-                String displayString = textView.getText().toString();//空中にきてるだけになっちゃうから取ってきたものの型が何なのか書く。
+                String displayString = inputTextView.getText().toString();//空中にきてるだけになっちゃうから取ってきたものの型が何なのか書く。
                 //文字列を連結する
                 StringBuilder stringBuilder = new StringBuilder();
                 //文字列を追加する
                 stringBuilder.append(displayString).append("7");
-                textView.setText(stringBuilder);
+                inputTextView.setText(stringBuilder);
             }
         });
 
@@ -141,12 +146,12 @@ public class MainActivity extends AppCompatActivity {
                 //8ってボタン押したら今まで押されたボタンの表示が残ったまま8って文字が追加で入るようにする。
                 //表示される材料を用意する。
                 //テキストビューから表示されている文字を取り出して箱に入れる。（今まで入っている文字が取り出せる）
-                String displayString = textView.getText().toString();//空中にきてるだけになっちゃうから取ってきたものの型が何なのか書く。
+                String displayString = inputTextView.getText().toString();//空中にきてるだけになっちゃうから取ってきたものの型が何なのか書く。
                 //文字列を連結する
                 StringBuilder stringBuilder = new StringBuilder();
                 //文字列を追加する
                 stringBuilder.append(displayString).append("8");
-                textView.setText(stringBuilder);
+                inputTextView.setText(stringBuilder);
             }
         });
 
@@ -156,12 +161,12 @@ public class MainActivity extends AppCompatActivity {
                 //9ってボタン押したら今まで押されたボタンの表示が残ったまま9って文字が追加で入るようにする。
                 //表示される材料を用意する。
                 //テキストビューから表示されている文字を取り出して箱に入れる。（今まで入っている文字が取り出せる）
-                String displayString = textView.getText().toString();//空中にきてるだけになっちゃうから取ってきたものの型が何なのか書く。
+                String displayString = inputTextView.getText().toString();//空中にきてるだけになっちゃうから取ってきたものの型が何なのか書く。
                 //文字列を連結する
                 StringBuilder stringBuilder = new StringBuilder();
                 //文字列を追加する
                 stringBuilder.append(displayString).append("9");
-                textView.setText(stringBuilder);
+                inputTextView.setText(stringBuilder);
             }
         });
 
@@ -171,14 +176,98 @@ public class MainActivity extends AppCompatActivity {
                 //0ってボタン押したら今まで押されたボタンの表示が残ったまま0って文字が追加で入るようにする。
                 //表示される材料を用意する。
                 //テキストビューから表示されている文字を取り出して箱に入れる。（今まで入っている文字が取り出せる）
-                String displayString = textView.getText().toString();//空中にきてるだけになっちゃうから取ってきたものの型が何なのか書く。
+                String displayString = inputTextView.getText().toString();//空中にきてるだけになっちゃうから取ってきたものの型が何なのか書く。
                 //文字列を連結する
                 StringBuilder stringBuilder = new StringBuilder();
                 //文字列を追加する
                 stringBuilder.append(displayString).append("0");
-                textView.setText(stringBuilder);
+                inputTextView.setText(stringBuilder);
             }
         });
+
+        plusButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //+ってボタン押したら今まで押されたボタンの表示が残ったまま+って文字が追加で入るようにする。
+                //表示される材料を用意する。
+                //テキストビューから表示されている文字を取り出して箱に入れる。（今まで入っている文字が取り出せる）
+                String displayString = inputTextView.getText().toString();//空中にきてるだけになっちゃうから取ってきたものの型が何なのか書く。
+                //文字列を連結する
+                StringBuilder stringBuilder = new StringBuilder();
+                //文字列を追加する
+                stringBuilder.append(displayString).append("+");
+                inputTextView.setText(stringBuilder);
+            }
+        });
+
+        minusButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //-ってボタン押したら今まで押されたボタンの表示が残ったまま-って文字が追加で入るようにする。
+                //表示される材料を用意する。
+                //テキストビューから表示されている文字を取り出して箱に入れる。（今まで入っている文字が取り出せる）
+                String displayString = inputTextView.getText().toString();//空中にきてるだけになっちゃうから取ってきたものの型が何なのか書く。
+                //文字列を連結する
+                StringBuilder stringBuilder = new StringBuilder();
+                //文字列を追加する
+                stringBuilder.append(displayString).append("-");
+                inputTextView.setText(stringBuilder);
+            }
+        });
+
+        multiplicationButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //×ってボタン押したら今まで押されたボタンの表示が残ったまま×って文字が追加で入るようにする。
+                //表示される材料を用意する。
+                //テキストビューから表示されている文字を取り出して箱に入れる。（今まで入っている文字が取り出せる）
+                String displayString = inputTextView.getText().toString();//空中にきてるだけになっちゃうから取ってきたものの型が何なのか書く。
+                //文字列を連結する
+                StringBuilder stringBuilder = new StringBuilder();
+                //文字列を追加する
+                stringBuilder.append(displayString).append("×");
+                inputTextView.setText(stringBuilder);
+            }
+        });
+
+        divisionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //÷ってボタン押したら今まで押されたボタンの表示が残ったまま÷って文字が追加で入るようにする。
+                //表示される材料を用意する。
+                //テキストビューから表示されている文字を取り出して箱に入れる。（今まで入っている文字が取り出せる）
+                String displayString = inputTextView.getText().toString();//空中にきてるだけになっちゃうから取ってきたものの型が何なのか書く。
+                //文字列を連結する
+                StringBuilder stringBuilder = new StringBuilder();
+                //文字列を追加する
+                stringBuilder.append(displayString).append("÷");
+                inputTextView.setText(stringBuilder);
+            }
+        });
+
+
+        //クリアボタンを押された時の処理
+        clrButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                inputTextView.setText("");
+                answerTextView.setText("");
+            }
+        });
+
+
+        //イコールを押された場合の処理
+        equalButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int result = Integer.parseInt(inputTextView.getText().toString()); // 入力された計算文字列をint型に変換
+                int total = result;
+                answerTextView.setText(String.valueOf(total)); // 答えを表示
+            }
+        });
+
+
+
 
 
 

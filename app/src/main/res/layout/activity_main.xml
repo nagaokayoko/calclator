@@ -20,10 +20,18 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/anserTextView"
+            android:id="@+id/inputTextView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/anserTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:gravity="right"
+            android:textSize="22sp" />
     </LinearLayout>
 
 
@@ -166,6 +174,7 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/button13"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="2"
